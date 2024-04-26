@@ -18,7 +18,7 @@ def todo(request):
             date = str(request.POST['date'])
             category = request.POST['category_select']
             content = title + '--' + date + ' ' + category
-            todo = Task(title=title, content=content, duedate=date,
+            todo = Task(title=title, content=content, due_time=date,
                         category=Category.objects.get(name=category))
             todo.save()
             return redirect('/todo')
